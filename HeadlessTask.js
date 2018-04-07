@@ -10,5 +10,5 @@ const BackgroundGeolocationTask = async (event) => {
             break;
     }
 };
-AppRegistry.registerHeadlessTask('BackgroundGeolocation', BackgroundGeolocationTask);
-BG.registerHeadlessTask(BackgroundGeolocationTask);
+AppRegistry.registerHeadlessTask('BackgroundGeolocation', (event) => BackgroundGeolocationTask(event));
+BG.registerHeadlessTask((event) => BackgroundGeolocationTask(event));
