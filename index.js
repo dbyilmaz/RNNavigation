@@ -19,7 +19,8 @@ class App extends Component {
             forceReloadOnBoot: true,
             batchSync: true,
             autoSync: true,
-            autoSyncThreshold: 20,
+            logLevel: BG.LOG_LEVEL_VERBOSE,
+            autoSyncThreshold: 0,
             enableHeadless: true,
             logMaxDays: 7,
             schedule: ['1-7 08:00-20:00']
@@ -29,7 +30,7 @@ class App extends Component {
     }
     render () {
         return(
-            <View>
+            <View style={{ marginTop: 50 }}>
                 <Text>Headless Task</Text>
             </View>
         );
@@ -43,6 +44,16 @@ const startApp = () => {
         screen: {
             screen: 'AppScreen',
             title: 'App',
+            navigatorStyle: {
+                navBarTransparent: true,
+                topBarBorderWidth: 0,
+                topBarShadowColor: 'blue',
+                topBarElevationShadowEnabled: false,
+            },
+        },
+        navigatorStyle: {
+            navBarTranslucent: true,
+            navBarHidden: true,
         },
         animationType: 'fade',
     });

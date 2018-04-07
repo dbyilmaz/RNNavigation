@@ -1,5 +1,5 @@
 import BG from 'react-native-background-geolocation';
-
+import { AppRegistry } from 'react-native';
 const BackgroundGeolocationTask = async (event) => {
     switch (event.name) {
         case 'location':
@@ -10,5 +10,5 @@ const BackgroundGeolocationTask = async (event) => {
             break;
     }
 };
-
-BG.registerHeadlessTask(event => BackgroundGeolocationTask(event));
+AppRegistry.registerHeadlessTask('BackgroundGeolocation', BackgroundGeolocationTask);
+BG.registerHeadlessTask(BackgroundGeolocationTask);
